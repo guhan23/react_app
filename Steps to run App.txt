@@ -1,0 +1,13 @@
+
+
+Follow the steps to use the TO_DO React App:
+
+*Make sure of Internet Connection.
+
+*Go to the folder "to_do/server" and open command prompt.
+
+* Run command "node server.js" to run the Express web server.
+   (Make sure of Node environment).
+
+* Open "http://localhost:8000/" in the browser (Chrome preferred)
+   to open the App.
