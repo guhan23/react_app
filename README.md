@@ -1,9 +1,13 @@
 
-**Note: this react app is hosted using Express.Js  **
+**Note: this react project build is hosted using Express.Js**
 
+#install Node dependencies
+Run "npm install" inside project root directory. 
+It will install packages which are listed in package.json.
 
-Run Express
-Inside the project directory, go to folder "/server" and run "node server.js" to run Express server where the react app is deployed.
+#Run ExpressJs<br/>
+Inside the project directory, go to folder "/server".<br/>
+run "node server.js" to run Express server .
 
 Open http://localhost:8000 to view it in the browser.(Chrome preferred)
 
