@@ -1,8 +1,6 @@
 var express = require('express');
 var bodyparser = require('body-parser');
 
-require('dotenv').config()
-
 var path = require('path');
 var CORS = require('cors');
 // var fs = require('fs')
@@ -19,6 +17,8 @@ app.use(CORS())
 //     path.join(__dirname, 'access.log'), { flags: 'a' }
 // );
 // app.use(logger('combined', { stream: accessLogStream }));
+
+require('dotenv').config({path:path.join(__dirname+'../.env')})
 
 
 
