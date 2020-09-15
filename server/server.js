@@ -20,7 +20,7 @@ app.use(CORS())
 
 
 
-const url_mongo = "mongodb+srv://admin:admin123@guhan1.eklob.mongodb.net/to_do?retryWrites=true&w=majority";
+const url_mongo = process.env.DATABASE_URI || "mongodb+srv://admin:admin123@guhan1.eklob.mongodb.net/to_do?retryWrites=true&w=majority";
 
 
 
@@ -138,7 +138,7 @@ mongoClient.connect(url_mongo, { useUnifiedTopology: true })
 
 
 
-        app.listen(8000, () => { console.log("Express running at 8000") })
+        app.listen(process.env.PORT || 8000, () => { console.log("Express running at 8000") })
 
 
     })
