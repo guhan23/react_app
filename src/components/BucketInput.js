@@ -1,5 +1,4 @@
 import React from "react";
-import render from "react-dom";
 import {
     InputGroup,
     InputGroupAddon,
@@ -25,8 +24,21 @@ class BucketInput extends React.Component {
 
     onAdd = (val) => {
         this.props.addBucket(val.toLowerCase());
+        this.props.fetchData();
         this.setState({ inputBucket: "" });
     };
+    onReset = () => {
+
+        fetch("http://localhost:8000/deleteBucketList", {
+            method: 'DELETE'
+        })
+            .then(res => {
+                this.props.fetchData();
+            })
+            .catch(err => { console.log(err) })
+
+
+    }
 
     render() {
         let val = this.state.inputBucket !== "" ? this.state.inputBucket : null;
@@ -43,6 +55,9 @@ class BucketInput extends React.Component {
                     />
                     <InputGroupAddon addonType="append">
                         <Button className="btn border-dark" onClick={() => this.onAdd(val)}><MdAddCircle /></Button>
+                    </InputGroupAddon>
+                    <InputGroupAddon addonType="append">
+                        <Button className="btn border-dark" onClick={() => this.onReset()}>ResetList</Button>
                     </InputGroupAddon>
                 </InputGroup>
 

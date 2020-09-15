@@ -1,9 +1,7 @@
 import React from "react";
-import render from "react-dom";
 import {
     InputGroup,
     InputGroupAddon,
-    ButtonGroup,
     Input,
     Button,
 } from "reactstrap";

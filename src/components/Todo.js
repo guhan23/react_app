@@ -1,5 +1,5 @@
 import React from "react";
-import { InputGroup, InputGroupAddon, InputGroupText, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { InputGroup, InputGroupAddon, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { TiTick } from "react-icons/ti";
 import { BiRotateRight } from "react-icons/bi";

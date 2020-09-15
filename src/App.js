@@ -1,14 +1,11 @@
-import React, { useState } from "react";
-import render from "react-dom";
+import React from "react";
 import BucketInput from './components/BucketInput';
-import BucketList from './components/BucketList';
 import "./App.css";
 import TodoInput from "./components/TodoInput";
 import { ListItem } from './components/ListItem';
-import { Container, Row, Col, InputGroup, InputGroupAddon, Input, Button, Alert, Card, CardText, Badge } from "reactstrap";
+import { Container, Row, Col, Button, Card } from "reactstrap";
 import { v4 as uuidv4 } from 'uuid';
 
-import { MdAddCircle } from "react-icons/md";
 import BucketTodoInput from "./components/BucketTodoInput";
 import { ListBucket } from "./components/ListBucket";
 
@@ -128,6 +125,7 @@ class App extends React.Component {
                 .catch(err => {
                     console.log(err)
                 })
+            this.fetchData();
         }
 
     }
@@ -203,7 +201,7 @@ class App extends React.Component {
                                                 Create <strong> Bucket types </strong> here !!
                                             </Button>
                                         </h2>
-                                        <BucketInput addBucket={this.addBucket} />
+                                        <BucketInput addBucket={this.addBucket} fetchData={this.fetchData} />
                                     </div>
                                 </Card>
                             </div>

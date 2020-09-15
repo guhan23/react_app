@@ -1,10 +1,10 @@
 var express = require('express');
 var bodyparser = require('body-parser');
-var logger = require('morgan');
+
 var path = require('path');
 var CORS = require('cors');
-var fs = require('fs')
-
+// var fs = require('fs')
+// var logger = require('morgan');
 var mongoClient = require("mongodb").MongoClient;
 
 
@@ -13,10 +13,10 @@ var app = express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(CORS())
-var accessLogStream = fs.createWriteStream(
-    path.join(__dirname, 'access.log'), { flags: 'a' }
-);
-app.use(logger('combined', { stream: accessLogStream }));
+// var accessLogStream = fs.createWriteStream(
+//     path.join(__dirname, 'access.log'), { flags: 'a' }
+// );
+// app.use(logger('combined', { stream: accessLogStream }));
 
 
 
@@ -113,6 +113,14 @@ mongoClient.connect(url_mongo, { useUnifiedTopology: true })
             collection_bucket.find({}, { projection: { _id: 0 } }).toArray()
                 .then(result => {
                     console.log(result)
+                    res.send(result);
+                })
+                .catch(err => console.log(err));
+        })
+
+        app.delete('/deleteBucketList', function (req, res) {
+            collection_bucket.remove()
+                .then(result => {
                     res.send(result);
                 })
                 .catch(err => console.log(err));

@@ -2,8 +2,7 @@ import React from "react";
 
 import {
     InputGroup,
-    InputGroupAddon, InputGroupButtonDropdown,
-    ButtonGroup,
+    InputGroupAddon,
     Input,
     Button,
 } from "reactstrap";
@@ -32,6 +31,12 @@ class BucketTodoInput extends React.Component {
         this.onInputChange = this.onInputChange.bind(this);
         // this.onAdd = this.onAdd.bind(this);
     }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.list.length !== this.props.list.length) {
+            this.setState({ list: this.props.list });
+        }
+    }
+
 
     onInputChange(e) {
         this.setState({ inputTodo: e.target.value });
