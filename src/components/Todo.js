@@ -25,7 +25,7 @@ class Todo extends React.Component {
 
     getData() {
         if (this.state.id) {
-            fetch('http://localhost:8000/getTodo/' + this.state.id)
+            fetch('http://localhost:8000/getTodo/' + this.state.id,{referrerPolicy:"origin"})
                 .then(res => res.json())
                 .then(result => {
                     this.setState({ status: result.status });
@@ -59,6 +59,7 @@ class Todo extends React.Component {
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                referrerPolicy:"origin"
             })
                 .then(res => {
                     this.toggleEdit();
@@ -97,6 +98,7 @@ class Todo extends React.Component {
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                referrerPolicy:"origin"
             })
                 .then(res => {
                     this.getData();
@@ -119,6 +121,7 @@ class Todo extends React.Component {
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                referrerPolicy:"origin"
             })
                 .then(res => {
                     this.props.fetchData();
