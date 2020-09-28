@@ -38,7 +38,7 @@ class App extends React.Component {
 
 
     getTodoData() {
-        fetch('http://localhost:8000/getTodo',{referrerPolicy:"origin"})
+        fetch('/getTodo',{referrerPolicy:"origin"})
             .then(res => res.json())
             .then(result => {
                 this.setState({ listOfTodo: result })
@@ -115,7 +115,7 @@ class App extends React.Component {
         // // })
 
         if (val) {
-            fetch('http://localhost:8000/addBucket', {
+            fetch('/addBucket', {
                 method: 'POST',
                 body: JSON.stringify({ bucketName: val }),
                 headers: {
@@ -141,7 +141,7 @@ class App extends React.Component {
                 value: val,
                 status: "pending"
             };
-            fetch('http://localhost:8000/addTodo', {
+            fetch('/addTodo', {
                 method: 'POST',
                 body: JSON.stringify(newTodo),
                 headers: {
