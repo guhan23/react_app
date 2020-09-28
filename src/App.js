@@ -51,7 +51,7 @@ class App extends React.Component {
 
     fetchData() {
 
-        fetch('http://localhost:8000/getTodo',{referrerPolicy:"origin"})
+        fetch('/getTodo',{referrerPolicy:"origin"})
             .then(res => res.json())
             .then(result => {
                 this.setState({ listOfTodo: result })
@@ -60,7 +60,7 @@ class App extends React.Component {
             .catch(err => {
                 console.log(err);
             })
-        fetch('http://localhost:8000/getBucketList',{referrerPolicy:"origin"})
+        fetch('/getBucketList',{referrerPolicy:"origin"})
             .then(res => res.json())
             .then(result => {
                 console.log(result)
@@ -81,7 +81,7 @@ class App extends React.Component {
                 status: "pending"
             };
             //   temp.push(newTodo);
-            fetch('http://localhost:8000/addTodo', {
+            fetch('/addTodo', {
                 method: 'POST',
                 body: JSON.stringify(newTodo),
                 headers: {
