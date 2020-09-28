@@ -2,7 +2,7 @@ var express = require('express');
 var bodyparser = require('body-parser');
 
 var path = require('path');
-var CORS = require('cors');
+var cors = require('cors');
 // var fs = require('fs')
 // var logger = require('morgan');
 var mongoClient = require("mongodb").MongoClient;
@@ -12,7 +12,7 @@ var app = express();
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
-app.use(CORS())
+app.use(cors({origin:'*'}));
 // var accessLogStream = fs.createWriteStream(
 //     path.join(__dirname, 'access.log'), { flags: 'a' }
 // );
