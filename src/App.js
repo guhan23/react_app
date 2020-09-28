@@ -38,7 +38,7 @@ class App extends React.Component {
 
 
     getTodoData() {
-        fetch('http://localhost:8000/getTodo')
+        fetch('http://localhost:8000/getTodo',{referrerPolicy:"origin"})
             .then(res => res.json())
             .then(result => {
                 this.setState({ listOfTodo: result })
@@ -51,7 +51,7 @@ class App extends React.Component {
 
     fetchData() {
 
-        fetch('http://localhost:8000/getTodo')
+        fetch('http://localhost:8000/getTodo',{referrerPolicy:"origin"})
             .then(res => res.json())
             .then(result => {
                 this.setState({ listOfTodo: result })
@@ -60,7 +60,7 @@ class App extends React.Component {
             .catch(err => {
                 console.log(err);
             })
-        fetch('http://localhost:8000/getBucketList')
+        fetch('http://localhost:8000/getBucketList',{referrerPolicy:"origin"})
             .then(res => res.json())
             .then(result => {
                 console.log(result)
@@ -87,6 +87,7 @@ class App extends React.Component {
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                referrerPolicy:"origin"
             })
                 .then(res => {
                     this.fetchData();
@@ -120,6 +121,7 @@ class App extends React.Component {
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                referrerPolicy:"origin"
             })
                 .then(res => { })
                 .catch(err => {
@@ -145,6 +147,7 @@ class App extends React.Component {
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                referrerPolicy:"origin"
             })
                 .then(res => { })
                 .catch(err => {
