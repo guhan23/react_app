@@ -29,7 +29,7 @@ class BucketInput extends React.Component {
     };
     onReset = () => {
 
-        fetch("http://localhost:8000/deleteBucketList", {
+        fetch("/deleteBucketList", {
             method: 'DELETE',
             referrerPolicy:"origin"
         })
