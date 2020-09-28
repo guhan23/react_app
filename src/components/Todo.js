@@ -25,7 +25,7 @@ class Todo extends React.Component {
 
     getData() {
         if (this.state.id) {
-            fetch('http://localhost:8000/getTodo/' + this.state.id,{referrerPolicy:"origin"})
+            fetch('/getTodo/' + this.state.id,{referrerPolicy:"origin"})
                 .then(res => res.json())
                 .then(result => {
                     this.setState({ status: result.status });
@@ -53,7 +53,7 @@ class Todo extends React.Component {
     onEditSave(val, id, ) {
         if (val) {
 
-            fetch('http://localhost:8000/editTodo', {
+            fetch('/editTodo', {
                 method: 'PUT',
                 body: JSON.stringify({ editId: id, editVal: val }),
                 headers: {
@@ -92,7 +92,7 @@ class Todo extends React.Component {
 
         if (id) {
 
-            fetch('http://localhost:8000/editStatusTodo', {
+            fetch('/editStatusTodo', {
                 method: 'PUT',
                 body: JSON.stringify({ editId: id, editStatus: changedStatus }),
                 headers: {
@@ -115,7 +115,7 @@ class Todo extends React.Component {
 
     deleteItem(id) {
         if (id) {
-            fetch('http://localhost:8000/deleteTodo', {
+            fetch('/deleteTodo', {
                 method: 'DELETE',
                 body: JSON.stringify({ deleteId: id }),
                 headers: {
