@@ -25,7 +25,7 @@ class Bucket extends React.Component {
     }
 
     getData() {
-        fetch("http://localhost:8000/getBucketTodo/" + this.state.bucketName,{referrerPolicy:"origin"})
+        fetch("/getBucketTodo/" + this.state.bucketName,{referrerPolicy:"origin"})
             .then(res => res.json())
             .then(data => {
                 this.setState({ listOfTodo: data });
